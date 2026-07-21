@@ -7,9 +7,13 @@ PLATFORMS = ["weather", "sensor", "air_quality", "button"]
 CONF_CLIENT_ID = "client_id"
 CONF_CLIENT_SECRET = "client_secret"
 CONF_UPDATE_INTERVAL = "update_interval"
+CONF_FORECAST_COUNT_DAILY = "forecast_count_daily"
+CONF_FORECAST_COUNT_HOURLY = "forecast_count_hourly"
 
 DEFAULT_NAME = "Xweatherly"
 DEFAULT_UPDATE_INTERVAL = 60
+DEFAULT_FORECAST_COUNT_DAILY = 7
+DEFAULT_FORECAST_COUNT_HOURLY = 24
 
 API_BASE = "https://data.api.xweather.com"
 

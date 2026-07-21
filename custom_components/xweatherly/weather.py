@@ -203,6 +203,7 @@ class XweatherlyWeather(CoordinatorEntity,WeatherEntity):
                     wind_bearing=p.get("windDirDEG"),
                     humidity=p.get("humidity"),
                     dew_point=self._get_forecast_value(p, "dewpointC", "dewpointF"),
+                    is_daytime=is_day,
                 )
             )
         return fc

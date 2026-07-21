@@ -14,6 +14,11 @@ from .const import (
     CONF_CLIENT_ID,
     CONF_CLIENT_SECRET,
     CONF_UPDATE_INTERVAL,
+    CONF_FORECAST_COUNT_DAILY,
+    CONF_FORECAST_COUNT_HOURLY,
+    DEFAULT_UPDATE_INTERVAL,
+    DEFAULT_FORECAST_COUNT_DAILY,
+    DEFAULT_FORECAST_COUNT_HOURLY,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -41,7 +46,9 @@ class XweatherlyDataCoordinator(DataUpdateCoordinator):
         self.client_secret = entry.data[CONF_CLIENT_SECRET]
         self.lat = entry.data.get("latitude", hass.config.latitude)
         self.lon = entry.data.get("longitude", hass.config.longitude)
-        interval = entry.data.get(CONF_UPDATE_INTERVAL, 60)
+        interval = entry.data.get(CONF_UPDATE_INTERVAL, DEFAULT_UPDATE_INTERVAL)
+        self.forecast_count_daily = entry.data.get(CONF_FORECAST_COUNT_DAILY, DEFAULT_FORECAST_COUNT_DAILY),
+        self.forecast_count_hourly = entry.data.get(CONF_FORECAST_COUNT_HOURLY, DEFAULT_FORECAST_COUNT_HOURLY),
 
         super().__init__(
             hass,
@@ -56,10 +63,10 @@ class XweatherlyDataCoordinator(DataUpdateCoordinator):
             conditions = await self._fetch("conditions")
             airquality = await self._fetch("airquality")
             forecast_hourly = await self._fetch(
-                "forecasts", {"filter": "1hr", "limit": 24}
+                "forecasts", {"filter": "1hr", "limit": self.forecast_count_hourly}
             )
             forecast_daily = await self._fetch(
-                "forecasts", {"filter": "day", "limit": 7}
+                "forecasts", {"filter": "day", "limit": self.forecast_count_daily}
             )
 
             # Normalize pollutants in air quality data

@@ -1,12 +1,12 @@
 {
   "domain": "xweatherly",
   "name": "Xweatherly",
-  "codeowners": ["@tbclark3"],
+  "codeowners": ["@tbclark3", "@gdgib"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/tbclark3/ha-xweatherly",
+  "documentation": "https://github.com/haext/xweatherly",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/tbclark3/ha-xweatherly/issues",
+  "issue_tracker": "https://github.com/haext/xweatherly/issues",
   "requirements": [],
-  "version": "1.1.6"
+  "version": "1.2.0a0"
 }

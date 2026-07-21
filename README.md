@@ -1,14 +1,13 @@
-# Xweatherly Home Assistant Integration <a href="https://www.xweather.com/" target="_blank" title="Powered by Vaisala Xweather"><img src="https://github.com/tbclark3/ha-xweatherly/blob/main/images/xweather_logo.png" alt="Vaisala Xweather" height="40" align="right" /></a>
+# Xweatherly Home Assistant Integration <a href="https://www.xweather.com/" target="_blank" title="Powered by Vaisala Xweather"><img src="https://github.com/haext/xweatherly/blob/main/images/xweather_logo.png" alt="Vaisala Xweather" height="40" align="right" /></a>
 
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Custom%20Component-blue)
 
 <p align="center">
-  <img src="https://github.com/tbclark3/ha-xweatherly/blob/main/logo.png" alt="Xweatherly Integration Logo" width="400"/>
+  <img src="https://github.com/haext/xweatherly/blob/main/logo.png" alt="Xweatherly Integration Logo" width="400"/>
 </p>
 
-**Xweatherly** is a custom integration for [Home Assistant](https://www.home-assistant.io/) that provides detailed weather, forecast, and air quality data from [Xweather.com](https://xweather.com/). The service is highly regarded for its accuracy, consistently receiving high rankings from [Forecast Advisor](https://forecastadvisor.com).
-
-***
+**Xweatherly** is a custom integration for [Home Assistant](https://www.home-assistant.io/) that provides detailed weather, forecast, and air quality data from [Xweather.com](https://xweather.com/).
+The service is highly regarded for its accuracy, consistently receiving high rankings from [Forecast Advisor](https://forecastadvisor.com).
 
 ### Features
 
@@ -16,7 +15,7 @@ This integration provides a comprehensive set of entities for your smart home:
 
 - **Weather Entity**: A single `weather.xweatherly` entity that:
   - Shows current conditions including temperature, humidity, pressure, wind speed, and visibility
-  - Shows a 7-day daily forecast and hourly forecast with 24 hours of data
+  - Shows a daily and hourly forecasts with configurable time horizons (default is 24 hours, and 7 days)
   - Is suitable for use on dashboards
 - **Individual Sensors**: Separate sensors are created for key data points, including:
   - Temperature, humidity, wind speed, and "feels-like" temperature
